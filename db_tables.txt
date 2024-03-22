@@ -1,0 +1,12 @@
+create schema labs;
+
+CREATE TABLE `systems` (
+ `sysno` int(11) NOT NULL,
+ `lab` varchar(100) NOT NULL,
+ `ip` varchar(100) NOT NULL,
+ `mac` varchar(100) NOT NULL,
+ `status` varchar(100) NOT NULL,
+ `refresh` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ PRIMARY KEY (`sysno`,`lab`),
+ UNIQUE KEY `ip` (`ip`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

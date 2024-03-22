@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Continuous Output</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Continuous Output</h1>
+    <div id="output">
+        <!-- Output will be displayed here -->
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var source = new EventSource("continuous_output.php");
+            source.onmessage = function(event) {
+                $('#output').append(event.data + "<br>");
+            };
+        });
+    </script>
+</body>
+</html>
+
